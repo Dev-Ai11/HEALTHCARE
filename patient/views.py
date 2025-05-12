@@ -59,6 +59,15 @@ def doctor_dashboard(request):
     return render(request,"doctor-dashboard.html")
 
 def add_patient_form(request):
+    if request.method=="POST":
+        form=patientForm(request.POST) 
+        if form.is_valid():
+            form.save()
+            messages.warning(request, "patient successfully added")
+            return redirect("add_patient_form")  
+        else:
+            messages.warning(request, "something went wrong")
+            return redirect("add_patient_form")   
     form=patientForm
     
     return render(request, "add-patient-form.html",{
