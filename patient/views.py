@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+from django.contrib import messages
+from  .forms import patientForm
 
 # Create your views here.
 def home(request):
@@ -20,7 +20,7 @@ def home(request):
 #             print('not login in')
 
 #     return render(request, "login.html", {'page_title': "doctor login"})
-from django.contrib import messages
+
 
 def doctor_login(request):
     if request.method == "POST":
@@ -59,6 +59,10 @@ def doctor_dashboard(request):
     return render(request,"doctor-dashboard.html")
 
 def add_patient_form(request):
-    return render(request, "add-patient-form.html")
+    form=patientForm
+    
+    return render(request, "add-patient-form.html",{
+        'form':form
+    })
 
 

@@ -1,11 +1,20 @@
-{% extends "dashboard.html" %}
+{% extends 'dashboard.html' %}
 
 {% block content %}
 
 
-<div class="card mt-3">
-    <h4 class="class-header">add Patients</h4>
-    <div class="class-body">the is the body of card</div>
+<div class="card">
+    <h4 class="card-header">add Patients</h4>
+    <div class="card-body">
+        <table class="table table-bordered">
+            {{form.as_table}}
+            <tr >
+                <td colspan="2">
+                    <input type="submit" class="btn btn-sm btn-success" value="save"/>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </div>
 

@@ -5,7 +5,18 @@ from .models import patient
 class patientForm(ModelForm):
     class Meta:
         model = patient
-        fields = ["age","gender","mobile","address","detail","medicine","note","amount","nextvisit"]
+        fields = [
+            "name",
+            "age",
+            "gender",
+            "mobile",
+            "address",
+            
+            "medicine_detail",
+            
+            "amount",
+            "next_visit"
+        ]
 
 
 # # Creating a form to add an article.
