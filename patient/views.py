@@ -55,7 +55,10 @@ def doctor_reset_password(request):
     
     return render(request, "reset-password.html")
 
-def add_patient(request):
-    return render (request, "add-patient-form")
+def doctor_dashboard(request):
+    return render(request,"doctor-dashboard.html")
+
+def add_patient_form(request):
+    return render(request, "add-patient-form.html")
 
 
