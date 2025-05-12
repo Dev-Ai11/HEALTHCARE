@@ -54,3 +54,8 @@ def doctor_reset_password(request):
             messages.error(request, 'Please enter a valid password.')
     
     return render(request, "reset-password.html")
+
+def add_patient(request):
+    return render (request, "add-patient-form")
+
+
